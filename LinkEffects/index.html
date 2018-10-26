@@ -37,6 +37,7 @@
 				height: 100%;
 				padding: .8rem;
 				text-align: left;
+				resize: none;
 				outline: none;
 			}
 			.md-textarea-wrapper {
@@ -278,22 +279,6 @@ html {
 		<!-- by @derSchepp https://github.com/Schepp/CSS-Filters-Polyfill -->
 		<script src="js/cssParser.js"></script>
 		<script src="js/css-filters-polyfill.js"></script>
-		<script>
-			document.querySelectorAll('nav').forEach(n => {
-				let modalBtn = document.createElement('button');
-				modalBtn.setAttribute('class', 'md-trigger md-open');
-				modalBtn.setAttribute('data-modal', 'modal-12');
-				modalBtn.innerHTML = 'View Code';
-				n.appendChild(modalBtn);
-			})
-			document.querySelectorAll('.md-open').forEach(btn => {
-				btn.addEventListener('click', () => {
-					document.querySelector('.md-modal').classList.add('md-show')
-				})
-			})
-			document.querySelector('.md-close').addEventListener('click', () => {
-				document.querySelector('.md-modal').classList.remove('md-show')
-			})
-		</script>
+		<script src="js/script.js"></script>
 	</body>
 </html>
