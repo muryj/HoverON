@@ -1,0 +1,90 @@
+
+@media (max-width:1199px){
+    html{
+        font-size: 8px;
+    }
+    .socialLinks{
+        display: flex;
+        margin-right: 2rem;
+        font-size: 4rem;
+    }
+    .socialLinks a{
+        margin-right: 1rem;
+    }
+  
+}
+@media (max-width:991px){
+    html{
+        font-size: 7px;
+    }
+    .computerVersion{
+        display: none;
+    }
+    .m-menu-link {
+		display: block;
+    }
+    .socialLinks{
+        display: flex;
+        margin-right: 2rem;
+        font-size: 4rem;
+    }
+    .socialLinks a{
+        margin-right: 1rem;
+    }
+
+
+
+    
+    
+}
+@media (max-width:800px){
+    html{
+        font-size: 6px;
+    }
+    .pricing{
+        flex-direction: column;
+        align-items: stretch;
+        
+    }
+    .priceElement{
+        width: 90%;
+        margin: 2rem auto;
+    }
+    .footerNav{
+        display: none;
+    }
+    .socialLinks{
+        display: flex;
+        margin-right: 2rem;
+        font-size: 3rem;
+    }
+    .socialLinks a{
+        margin-right: 1rem;
+    }
+    .callToAction{
+        display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+    }
+    
+}
+@media (max-width:500px){
+    .tableHeader p{
+        word-wrap: wrap;
+    }
+    .priceBtn{
+        font-size: 1rem;
+    }
+    .priceElement h3{
+        margin-bottom: 0;
+    }
+    .socialLinks{
+        display: flex;
+        margin-right: 2rem;
+        font-size: 4rem;
+    }
+    .socialLinks a{
+        margin-right: 1rem;
+    }
+}
