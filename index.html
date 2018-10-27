@@ -60,7 +60,7 @@
                     <li><a href="#" class="menu-link">Home</a></li>
                     <li><a href="#" class="menu-link">Why hover:ON</a></li>
                     <li><a href="#mt" class="menu-link features">Features</a></li>
-                    <li><a href="#" class="menu-link getStarted">Get Started</a></li>
+                    <li><a href="#" class="menu-link getStarted getStarted-js">Get Started</a></li>
                 </ul>
             </nav>
             
@@ -116,8 +116,8 @@
     <div class="callToAction">
         <span>web dev essentials</span>
         <h3>Save your time with hover:ON!</h3>
-        <button class="ctaBtn getStarted">get started</button>
-        <button class="ctaBtn exploreF" onClick='location.href="#mt"'>explore features</button>
+        <button class="ctaBtn getStarted-js">get started</button>
+        <button class="ctaBtn exploreF" onClick='location.href="#mt"'>explore</button>
     </div>
 
 
@@ -169,7 +169,7 @@
         <script src="LinkEffects/js/modalEffects.js"></script>
         <script>
           const modalWindow = document.querySelector('.md-modal')
-          document.querySelectorAll('.getStarted').forEach(a => {
+          document.querySelectorAll('.getStarted-js').forEach(a => {
             a.addEventListener('click', () => {
               modalWindow.classList.add('md-show')
             })
