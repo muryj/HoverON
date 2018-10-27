@@ -47,12 +47,37 @@
 				resize: none;
 				outline: none;
 			}
+			button {
+				outline: none;
+			}
 			.md-textarea-wrapper {
 				width: 100%;
 				height: 400px;
 				display: flex;
 				flex-direction: row;
 				justify-content: space-between;
+			}
+			.md-btn-wrapper {
+				display: flex;
+			}
+			.md-copy--html {
+				background-color: navy;
+				transition: all .1s ease-in;
+			}
+			.md-copy--html:hover{
+				background-color: navy;
+				transform: rotateZ(2deg);
+			}
+			.md-copy--css {
+				background-color: orange;
+				transition: all .1s ease-in;
+			}
+			.md-copy--css:hover {
+				background-color: orange;
+				transform: rotateZ(-2deg);	
+			}
+			textarea {
+				border: 2px solid #000;
 			}
 		</style>
 	</head>
@@ -253,8 +278,10 @@ html {
 }
 </textarea>
 				</div>
-			<div>
-					<button class="md-close">Close me!</button>					
+			<div class="md-btn-wrapper">
+					<button class="md-copy--html">Copy HTML!</button>
+					<button class="md-close">Close me!</button>						
+					<button class="md-copy--css">Copy CSS!</button>
 			</div>
 			</div>
 		</div>
@@ -263,6 +290,17 @@ html {
 		<!-- classie.js by @desandro: https://github.com/desandro/classie -->
 		<script src="js/classie.js"></script>
 		<script src="js/modalEffects.js"></script>
+
+		<script>
+			const sEl = (className) => document.querySelector(className)
+			const copyToClipboard = (className, str) => {
+			  const el = sEl(className);
+			  el.select();
+			  document.execCommand('copy');
+			};
+			sEl('.md-copy--html').onclick = () => copyToClipboard('.md-content__html')
+			sEl('.md-copy--css').onclick = () => copyToClipboard('.md-content__css')
+		</script>
 
 		<!-- for the blur effect -->
 		<!-- by @derSchepp https://github.com/Schepp/CSS-Filters-Polyfill -->
