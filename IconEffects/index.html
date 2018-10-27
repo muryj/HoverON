@@ -10,27 +10,130 @@
 		<meta name="author" content="Codrops" />
 		<link rel="stylesheet" type="text/css" href="css/default.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
-		<link rel="stylesheet" type="text/css" href="../LinkEffects/css/component-modal.css" />
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<script src="js/modernizr.custom.js"></script>
+<!-- 
+. -->		<script src="js/modernizr.custom.js"></script>
+		<style>
+			header {
+				z-index: 99 !important;
+			}
+			.m {
+				position: fixed;
+				width: 100%;
+				height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background-color: rgba(0,0,0,.5);
+				z-index: 9999;
+			}
+			.m--unactive {
+				display: none;
+			}
+			.m .md-content {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				width: 75%;
+				max-width: 1080px;
+				height: 80vh;
+				padding: 1rem;
+				background-color: #fff;
+			}
+textarea {
+	width: 45%;
+	height: 100%;
+	padding: .8rem;
+	text-align: left;
+	resize: none;
+	outline: none;
+}
+button {
+	outline: none;
+}
+.md-textarea-wrapper {
+	width: 100%;
+	height: 400px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+.md-btn-wrapper {
+	margin-top: 1rem;
+	display: flex;
+}
+.md-copy--html {
+	background-color: navy;
+	transition: all .1s ease-in;
+}
+.md-copy--html:hover{
+	background-color: navy;
+	transform: rotateZ(2deg);
+}
+.md-copy--css {
+	background-color: orange;
+	transition: all .1s ease-in;
+}
+.md-copy--css:hover {
+	background-color: orange;
+	transform: rotateZ(-2deg);	
+}
+.m button {
+	border: none;
+	outline: none;
+}
+textarea {
+	border: 2px solid #000;
+}
+
+		</style>
 	</head>
 	<body>
-		<div class="md-modal md-effect-12" id="modal-12">
+		<div class="m m--unactive">
 			<div class="md-content">
 				<div class="md-textarea-wrapper">
 <textarea class="md-content__html" readonly>
-  <!DOCTYPE html>
-  <html>
-  <head>
-    <title></title>
-  </head>
-  <body>
-  </body>
-  </html>
+<a href="#set-1" class="hi-icon hi-icon-mobile">
+	Mobile
+</a>
 </textarea>
 <textarea class="md-content__css" readonly>
-html {
-	color: red;
+.hi-icon {
+	display: inline-block;
+	font-size: 0px;
+	cursor: pointer;
+	margin: 15px 30px;
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	text-align: center;
+	position: relative;
+	z-index: 1;
+	color: #fff;
+}
+
+.hi-icon:after {
+	pointer-events: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	content: '';
+	-webkit-box-sizing: content-box; 
+	-moz-box-sizing: content-box; 
+	box-sizing: content-box;
+}
+
+.hi-icon:before {
+	font-family: 'ecoicon';
+	speak: none;
+	font-size: 48px;
+	line-height: 90px;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	display: block;
+	-webkit-font-smoothing: antialiased;
 }
 </textarea>
 				</div>
@@ -41,14 +144,9 @@ html {
 			</div>
 			</div>
 		</div>
-		<div class="md-overlay"></div><!-- the overlay element -->
 		<div class="container">
 			<!-- Top Navigation -->
-			
 			<header>
-					<div class="backIcon">
-							<a href="../index.html#mt"><i class="fa fa-arrow-left"></i></a>
-					</div>
 				<h1>Icon Hover Effects <span>Simple hover effects for circular icons</span></h1>	
 				<nav id="codrops-demos" class="codrops-demos">
 					<a href="#set-1">1</a>
@@ -62,7 +160,6 @@ html {
 			
 				</nav>
 			</header>
-			
 			<section id="set-1">
 				<div class="hi-icon-wrap hi-icon-effect-1 hi-icon-effect-1a">
 					<a href="#set-1" class="hi-icon hi-icon-mobile">Mobile</a>
@@ -200,6 +297,33 @@ html {
 				</div>
 			</section>
 		</div><!-- /container -->
+		<div class="md-modal md-effect-12" id="modal-12">
+			<div class="md-content">
+				<div class="md-textarea-wrapper">
+<textarea class="md-content__html" readonly>
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+  </body>
+  </html>
+</textarea>
+<textarea class="md-content__css" readonly>
+html {
+	color: red;
+}
+</textarea>
+				</div>
+			<div class="md-btn-wrapper">
+					<button class="md-copy--html">Copy HTML!</button>
+					<button class="md-close">Close me!</button>						
+					<button class="md-copy--css">Copy CSS!</button>
+			</div>
+			</div>
+		</div>
+		<div class="md-overlay"></div><!-- the overlay element -->
 		<script>
 			var hash = window.location.hash,
 				current = 0,
@@ -234,17 +358,16 @@ html {
 		</script>
 		<script>
 			const sElAll = (elAll) => document.querySelectorAll(elAll) 
-			document.querySelectorAll('a.hi-icon').forEach(el => {
+			document.querySelectorAll('a.hi-icon').forEach(el => 
 				el.onclick = () => {
-					sEl('.md-modal').classList.add('md-open')
+					sEl('.m').classList.remove('m--unactive')
 				}
-			})
+			)
 			sEl('.md-close').onclick = () => {
-				sEl('.md-modal').classList.remove('md-open')
+				sEl('.m').classList.add('m--unactive')
 			}
 		</script>
 		<script src="../LinkEffects/js/classie.js"></script>
-    <script src="../LinkEffects/js/modalEffects.js"></script>
     <script src="../LinkEffects/js/modernizr.custom.js"></script>
 	</body>
 </html>
