@@ -8,13 +8,40 @@
 		<meta name="description" content="Simple Icon Hover Effects with CSS Transitions and Animations" />
 		<meta name="keywords" content="icons, hover, round, circular, transition, animation, css3" />
 		<meta name="author" content="Codrops" />
-		<link rel="shortcut icon" href="../favicon.ico"> 
 		<link rel="stylesheet" type="text/css" href="css/default.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="../LinkEffects/css/component-modal.css" />
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<script src="js/modernizr.custom.js"></script>
 	</head>
 	<body>
+		<div class="md-modal md-effect-12" id="modal-12">
+			<div class="md-content">
+				<div class="md-textarea-wrapper">
+<textarea class="md-content__html" readonly>
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+  </body>
+  </html>
+</textarea>
+<textarea class="md-content__css" readonly>
+html {
+	color: red;
+}
+</textarea>
+				</div>
+			<div class="md-btn-wrapper">
+					<button class="md-copy--html">Copy HTML!</button>
+					<button class="md-close">Close me!</button>						
+					<button class="md-copy--css">Copy CSS!</button>
+			</div>
+			</div>
+		</div>
+		<div class="md-overlay"></div><!-- the overlay element -->
 		<div class="container">
 			<!-- Top Navigation -->
 			
@@ -195,5 +222,29 @@
 				el.className = 'current-demo'; 
 			}
 		</script>
+		<script>
+			const sEl = (className) => document.querySelector(className)
+			const copyToClipboard = (className, str) => {
+			  const el = sEl(className);
+			  el.select();
+			  document.execCommand('copy');
+			};
+			sEl('.md-copy--html').onclick = () => copyToClipboard('.md-content__html')
+			sEl('.md-copy--css').onclick = () => copyToClipboard('.md-content__css')
+		</script>
+		<script>
+			const sElAll = (elAll) => document.querySelectorAll(elAll) 
+			document.querySelectorAll('a.hi-icon').forEach(el => {
+				el.onclick = () => {
+					sEl('.md-modal').classList.add('md-open')
+				}
+			})
+			sEl('.md-close').onclick = () => {
+				sEl('.md-modal').classList.remove('md-open')
+			}
+		</script>
+		<script src="../LinkEffects/js/classie.js"></script>
+    <script src="../LinkEffects/js/modalEffects.js"></script>
+    <script src="../LinkEffects/js/modernizr.custom.js"></script>
 	</body>
 </html>
