@@ -142,3 +142,25 @@ a:active {
 	}
 
 }
+.backIcon{
+	position: relative;
+	left:-500px;
+	top:30px;
+	font-size: 50px;
+	z-index:20;
+
+}
+.backIcon i{
+	color: darkmagenta;
+}
+.backIcon::after{
+	content:"go back";
+	font-size: 20px;
+	position: relative;
+	top:50px;
+	left:-60px;
+
+}
+.backIcon i:hover{
+	color:red;
+}
