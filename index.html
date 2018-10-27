@@ -12,26 +12,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="media.css">
     
-    <!-- modal window -->
-    <style>
-    button {
-      border: none;
-      padding: 0.6em 1.2em;
-      background: #c0392b;
-      color: #fff;
-      font-family: 'Lato', Calibri, Arial, sans-serif;
-      font-size: 1em;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      cursor: pointer;
-      display: inline-block;
-      margin: 3px 2px;
-      border-radius: 2px;
-    }
-    </style>
-    <link rel="stylesheet" type="text/css" href="LinkEffects/css/component-modal.css" />
-    <script src="LinkEffects/js/modernizr.custom.js"></script>
-    <!-- END modal window -->
     
 </head>
 <body>
@@ -48,10 +28,12 @@
         <header>
             <div class="logo">
                <a href="index.html">hover:<span>O</span><span>N</span></a>
+               
 
             </div>
             <a href="#" class="m-menu-link">
                 <i class="fa fa-bars"></i>
+                
             </a>
 
             
@@ -69,6 +51,7 @@
         </header>
         <div class="main-text">
             <span>web dev essentials</span>
+
             <h1>Develop with ease</h1>
             <p>Add hover effects and animations to your html elements easily! Choose, copy, get job done!
             </p>
@@ -166,19 +149,10 @@
 
         <script src="LinkEffects/js/classie.js"></script>
         <script src="LinkEffects/js/modalEffects.js"></script>
-        <script>
-          const modalWindow = document.querySelector('.md-modal')
-          document.querySelectorAll('.getStarted').forEach(a => {
-            a.addEventListener('click', () => {
-              modalWindow.classList.add('md-show')
-            })
-          })
-          document.querySelector('.md-close').onclick = () => {
-            modalWindow.classList.remove('md-show')
-          }
-        </script>
+        <script src="LinkEffects/js/modernizr.custom.js"></script>
 
         <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
         <script src="script.js"></script>
+      
 </body>
 </html>

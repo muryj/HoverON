@@ -12,6 +12,7 @@
 		<!-- modal window -->
 		<link rel="stylesheet" type="text/css" href="css/default.css" />
 		<link rel="stylesheet" type="text/css" href="css/component-modal.css" />
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<script src="js/modernizr.custom.js"></script>
 		<!-- END modal window -->
 		<style>
@@ -47,6 +48,30 @@
 				flex-direction: row;
 				justify-content: space-between;
 			}
+			.backIcon{
+				position:fixed;
+				top:30px;
+				left: 40px;
+				font-size: 50px;
+				z-index:20;
+			
+			}
+			.backIcon i{
+
+				color:gainsboro;
+			}
+			.backIcon::after{
+				content:"go back";
+				font-size: 20px;
+				position: relative;
+				top:50px;
+				left:-60px;
+	
+			}
+			.backIcon i:hover{
+				color:red;
+			}
+		
 		</style>
 	</head>
 	<body>
@@ -54,6 +79,9 @@
 			<!-- Top Navigation -->
 			<div class="codrops-top clearfix">
 				
+			</div>
+			<div class="backIcon">
+					<a href="../index.html"><i class="fa fa-arrow-left"></i></a>
 			</div>
 			<section class="color-1">
 				<nav class="cl-effect-1">

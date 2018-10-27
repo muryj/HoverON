@@ -31,4 +31,13 @@ $(function() {
 		destination = $(elementClick).offset().top;
 		$('html, body').animate( { scrollTop: destination }, 1100 );
 	});
+	const modalWindow = document.querySelector('.md-modal')
+	document.querySelectorAll('.getStarted').forEach(a => {
+	  a.addEventListener('click', () => {
+		modalWindow.classList.add('md-show')
+	  })
+	})
+	document.querySelector('.md-close').onclick = () => {
+	  modalWindow.classList.remove('md-show')
+	}
 });
