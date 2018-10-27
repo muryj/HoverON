@@ -689,6 +689,37 @@ button {
 
 .md-content button {
 	display: block;
-	margin: 0 auto;
-	font-size: 0.8em;
+	margin: 0px 0px 20px 0px;
+	font-size: 2em;
+}
+.md-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.md-content img{
+  padding: 0;
+  margin: 0;
+  margin-top: -20px;
+  margin-bottom: -20px;
+  width:800px;
+  height:380px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.md-content .textContent h1{
+  font-size: 30px;
+  margin-bottom: -5px;
+}
+.md-content .textContent{
+  text-align: center;
+}
+.md-content .textContent ol{
+  text-align: left;
+  font-size: 12px;
+  margin:0;
+  padding:0;
 }
