@@ -290,6 +290,8 @@ a:hover .bottom:after{
 
 }
 .callToAction{
+    display: flex;
+    flex-direction: column;
   padding:15rem;
   text-align: center;
   padding: 5rem 10rem 10rem 10rem;
@@ -297,6 +299,10 @@ a:hover .bottom:after{
   background-image: -webkit-linear-gradient( 150deg, rgb(136,211,206) 0%, rgb(110,69,226) 100%);
   background-image: -ms-linear-gradient( 150deg, rgb(136,211,206) 0%, rgb(110,69,226) 100%);
   color:#fff;
+}
+.callToActionBtns{
+    display: flex;
+    justify-content: center;
 }
 .callToAction span{
   font-size: 1.5rem;
